@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALL BRAND SERVICE CENTRE - Lucknow</title>
+
+  <style>
+    *{ margin:0; padding:0; box-sizing:border-box; font-family:Arial, Helvetica, sans-serif; }
+    body{ background:#f5f5f5; padding-bottom:100px; }
+
+    header{ background:#1e40af; color:white; padding:15px; text-align:center; position:sticky; top:0; z-index:10; }
+    header h1{ font-size:26px; }
+
+    .hero{ background:#2563eb; color:white; text-align:center; padding:35px 20px; }
+
+    .service-card{ background:white; margin:15px; padding:20px; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1); text-align:center; }
+    .service-card h3{ color:#1e40af; font-size:24px; margin-bottom:8px; }
+
+    .btn{ background:#2563eb; color:white; border:none; padding:12px 30px; border-radius:30px; font-size:16px; width:100%; margin-top:8px; cursor:pointer; }
+
+    .about{ background:white; margin:15px; padding:25px; border-radius:15px; box-shadow:0 5px 15px rgba(0,0,0,0.1); text-align:center; }
+
+    input, textarea{ width:100%; padding:14px; margin-bottom:15px; border-radius:10px; border:1px solid #ccc; font-size:16px; }
+    textarea{ height:120px; resize:none; }
+
+    /* Gallery Section */
+    .gallery-section{ padding:10px 0; }
+    .gallery-card{ 
+      background:white; 
+      margin:12px; 
+      border-radius:12px; 
+      overflow:hidden; 
+      box-shadow:0 5px 15px rgba(0,0,0,0.1); 
+      text-align:center; 
+    }
+    .gallery-card img{ 
+      width:100%; 
+      height:220px; 
+      object-fit:cover; 
+    }
+    .gallery-card h3{ 
+      color:#1e40af; 
+      padding:12px 8px; 
+      font-size:18px; 
+      font-weight:bold; 
+    }
+
+    /* FLOATING BUTTONS */
+    .fixed-btn{
+      position:fixed;
+      right:15px;
+      padding:13px 18px;
+      border-radius:50px;
+      color:white;
+      font-weight:bold;
+      text-decoration:none;
+      box-shadow:0 4px 15px rgba(0,0,0,0.3);
+      z-index:1000;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .call-btn{ background:#25D366; bottom:80px; }
+    .wp-btn{ background:#25D366; bottom:15px; }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>ALL BRAND SERVICE CENTRE</h1>
+    <p>Lucknow</p>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h2 style="font-size:26px; margin-bottom:8px;">HOME APPLIANCES</h2>
+    <p>We Provide Best Repair Service in Lucknow</p>
+    <p style="margin-top:10px;">AC • Fridge • Washing Machine • Microwave</p>
+  </div>
+
+  <!-- SERVICES -->
+  <div style="padding:10px 0;">
+    <div class="service-card">
+      <h3>AC Repair</h3>
+      <p>Gas Filling, Cooling Issue, Installation & Servicing</p>
+      <button class="btn" onclick="bookService('AC Repair')">Book Now</button>
+    </div>
+    <div class="service-card">
+      <h3>Fridge Repair</h3>
+      <p>Cooling Issue, Gas Leak, Compressor</p>
+      <button class="btn" onclick="bookService('Fridge Repair')">Book Now</button>
+    </div>
+    <div class="service-card">
+      <h3>Washing Machine Repair</h3>
+      <p>Not Spinning, Water Leak, Motor Issue</p>
+      <button class="btn" onclick="bookService('Washing Machine Repair')">Book Now</button>
+    </div>
+    <div class="service-card">
+      <h3>Microwave Repair</h3>
+      <p>Not Heating, Door Issue, Button Problem</p>
+      <button class="btn" onclick="bookService('Microwave Repair')">Book Now</button>
+    </div>
+  </div>
+
+  <!-- BOOKING FORM -->
+  <div class="about" id="bookingForm">
+    <h2 style="color:#1e40af; margin-bottom:20px;">Book Service</h2>
+    <form onsubmit="sendWhatsApp(); return false;">
+      <input type="text" id="name" placeholder="Enter Your Name" required>
+      <input type="tel" id="phone" placeholder="Enter Mobile Number" required>
+      <input type="text" id="location" placeholder="Enter Your Location" required>
+      <textarea id="problem" placeholder="Write Your Problem" required></textarea>
+      <button type="submit" class="btn">Send on WhatsApp</button>
+    </form>
+  </div>
+
+  <!-- PHOTOS SECTION -->
+  <div class="gallery-section">
+    <div class="gallery-card"><img src="photo1.jpg" alt=""><h3>BEST AC SERVICE PROVIDE IN LUCKNOW</h3></div>
+    <div class="gallery-card"><img src="photo2.jpg" alt=""><h3>FRIDGE TOP REPAIR CENTRE</h3></div>
+    <div class="gallery-card"><img src="photo3.jpg" alt=""><h3>BEST WASHING MACHINE REPAIRING CENTRE</h3></div>
+    <div class="gallery-card"><img src="photo4.jpg" alt=""><h3>BEST MICROWAVES REPAIRING CENTRE IN LUCKNOW</h3></div>
+    <div class="gallery-card"><img src="photo5.jpg" alt=""><h3>RO REPAIRING CENTRE</h3></div>
+    <div class="gallery-card"><img src="photo6.jpg" alt=""><h3>BEST GEYSER REPAIRING</h3></div>
+  </div>
+
+  <!-- WHY CHOOSE US -->
+  <div class="about">
+    <h2 style="color:#1e40af; margin-bottom:20px;">Why Customer Choose Us</h2>
+    <ul style="text-align:left; max-width:600px; margin:0 auto; padding:0 15px;">
+      <li>✅ Expert AC & Fridge Technicians</li>
+      <li>✅ Same Day Service Available</li>
+      <li>✅ Affordable Repair Charges</li>
+      <li>✅ Customer Satisfaction Priority</li>
+      <li>✅ Doorstep Repair Service</li>
+      <li>✅ All Brands Supported</li>
+      <li>✅ Quality Spare Parts Used</li>
+      <li>✅ Trusted Local Service Team</li>
+      <li>✅ Quick Response on WhatsApp</li>
+      <li>✅ 24/7 Customer Support</li>
+    </ul>
+  </div>
+  <!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <title>All Brand Service Centre - Disclaimer</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Pure section ka style - Navy Blue background */
+        .disclaimer-section {
+            background-color: #0c0f24; /* Dark Navy Blue */
+            color: #d1d1d1; /* Light grey text */
+            padding: 50px 20px;
+            text-align: left;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Disclaimer heading ka style */
+        .disclaimer-heading {
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        /* Text paragraph ka style */
+        .disclaimer-text {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 0; /* paragraph ke niche space remove kiya */
+        }
+
+        /* Call Now section ka style - Pure Black background aur white text */
+        .call-now-section {
+            background-color: #000000; /* Pure Black */
+            color: #ffffff; /* White text */
+            text-align: center;
+            padding: 20px 0;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        .call-now-number {
+            color: #ffffff;
+            text-decoration: none; /* remove underline from link */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="disclaimer-section">
+        <div class="container">
+            <h1 class="disclaimer-heading">Disclaimer</h1>
+            
+            <p class="disclaimer-text">
+                * We are an independent service provider and are not authorized associate partners from any brands. Local repair vendors perform all service calls and repairs (note we don't hold any authorization of).
+            </p>
+        </div>
+    </div>
+
+    <div class="call-now-section">
+        <span>Call Now : </span>
+        <a href="tel:8090027420" class="call-now-number">8090027420</a>
+    </div>
+
+</body>
+</html>
+
+<div style="background-color: #5ce1ff; padding: 30px; font-family: Arial, sans-serif; text-align: left; border-radius: 10px; color: #1a1a1a;">
+    
+    <div style="display: flex; align-items: center; margin-bottom: 25px;">
+        <img src="LOGO.jpg" alt="Logo" style="width: 80px; height: 80px; border-radius: 50%; border: 2px solid #fff;">
+        <h1 style="margin-left: 15px; font-size: 24px; color: #003366; text-transform: uppercase;">ALL BRAND SERVICE CENTRE</h1>
+    </div>
+
+    <div style="margin-bottom: 25px; line-height: 1.6;">
+        <h2 style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">
+            ALL BRAND SERVICE CENTRE is the Best AC, Refrigerator, microwave oven, and washing machine repair and Service Center in Lucknow.
+        </h2>
+    </div>
+
+    <div style="font-size: 18px;">
+        <div style="margin-bottom: 15px; display: flex; align-items: flex-start;">
+            <span style="font-size: 24px; margin-right: 15px;">📍</span>
+            <span>Jankipuram extension lucknow, Uttar Pradesh 226201</span>
+        </div>
+
+        <div style="margin-top: 15px; display: flex; align-items: center; font-size: 28px; font-weight: bold; color: #000;">
+            <span style="font-size: 24px; margin-right: 15px;">📞</span>
+            <span>+91 8090027420</span>
+        </div>
+    </div>
+</div>
+
+  <!-- ABOUT -->
+  <div class="about">
+    <h2 style="color:#1e40af; margin-bottom:15px;">About Us</h2>
+    <p style="line-height:1.6; color:#444;">
+      We repair home appliances in Lucknow, including air conditioners, refrigerators, washing machines, and microwaves, and repair to your home the same day. We always provide original parts with 6-month parts warranty.
+    </p>
+
+    <h2 style="color:#1e40af; margin:25px 0 15px 0;">Contact Us</h2>
+    <p style="font-size:22px; font-weight:bold; color:#1e40af;">📞 8090027420</p>
+    <p>Lucknow, Uttar Pradesh</p>
+
+    <a href="https://wa.me/918090027420" target="_blank" 
+       style="display:inline-block; background:#25D366; color:white; padding:12px 30px; border-radius:30px; text-decoration:none; margin-top:10px;">
+      💬 Massage on WhatsApp 
+    </a>
+  </div>
+
+  <!-- FLOATING BUTTONS -->
+  <a href="tel:8090027420" class="fixed-btn call-btn">📞 Call Now</a>
+  <a href="https://wa.me/918090027420" target="_blank" class="fixed-btn wp-btn">💬 WhatsApp</a>
+
+  <script>
+    let selectedService = "";
+    function bookService(service){
+      selectedService = service;
+      document.getElementById("bookingForm").scrollIntoView({ behavior: "smooth" });
+    }
+    function sendWhatsApp(){
+      let name = document.getElementById("name").value;
+      let phone = document.getElementById("phone").value;
+      let location = document.getElementById("location").value;
+      let problem = document.getElementById("problem").value;
+
+      let message = `*ALL BRAND SERVICE CENTRE*%0A%0A` +
+        `Service: ${selectedService}%0A` +
+        `Name: ${name}%0A` +
+        `Mobile: ${phone}%0A` +
+        `Location: ${location}%0A` +
+        `Problem: ${problem}`;
+
+      window.open("https://wa.me/918090027420?text=" + encodeURIComponent(message), "_blank");
+  }
+</script>
+</body>
+</html>
